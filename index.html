@@ -3,41 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Приглашение на праздничное мероприятие">
-  <meta property="og:title" content="Праздничное приглашение">
-  <meta property="og:description" content="Будем рады видеть вас!">
-  <meta property="og:type" content="website">
-  <title>Праздничное приглашение</title>
+  <meta name="theme-color" content="#06152d">
+  <meta name="description" content="Приглашение на новогодний корпоратив АО «Сетевая компания»">
+  <title>Новогодний корпоратив — АО «Сетевая компания»</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="intro" id="intro">
-    <div class="sparkles" aria-hidden="true"></div>
-    <p class="eyebrow">С любовью и теплом</p>
-    <h1>Приглашение</h1>
-    <p class="intro-sub">В особенный праздничный вечер</p>
-    <button id="openBtn" class="button">Открыть приглашение</button>
-    <div class="scroll-hint">↓</div>
-  </section>
+  <canvas id="lightning" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="snow" id="snow" aria-hidden="true"></div>
 
   <main>
-    <section class="invite section">
-      <div class="ornament">✦</div>
-      <p class="eyebrow">Дорогие коллеги!</p>
-      <h2>Будем рады разделить этот праздник с вами</h2>
-      <p class="placeholder">Здесь будет основной текст приглашения, дата и место проведения мероприятия.</p>
-      <div class="details">
-        <div><span>Дата</span><strong>Уточняется</strong></div>
-        <div><span>Время</span><strong>Уточняется</strong></div>
-        <div><span>Место</span><strong>Уточняется</strong></div>
+    <section class="hero" id="top">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> АО «Сетевая компания» <span class="eyebrow-line"></span></div>
+        <img class="company-logo" src="logo-setevaya.png" alt="Сетевая компания">
+        <p class="hero-kicker">ПРИГЛАШАЕТ НА</p>
+        <h1>НОВОГОДНИЙ<br><span>КОРПОРАТИВ</span></h1>
+        <div class="hero-year">2026 <i></i> 2027</div>
+        <a class="scroll-link" href="#invitation" aria-label="Прокрутить к приглашению">
+          <span>ОТКРОЙТЕ ПРИГЛАШЕНИЕ</span>
+          <span class="scroll-circle"><span>↓</span></span>
+        </a>
       </div>
+      <div class="side-label">ВМЕСТЕ СОЗДАЁМ ЭНЕРГИЮ БУДУЩЕГО</div>
+      <div class="hero-bottom"><span>22 ДЕКАБРЯ 2026</span><span class="bottom-dash"></span><span>КАЗАНЬ</span></div>
     </section>
-    <section class="second section">
-      <div class="ornament">✧</div>
-      <p class="eyebrow">До встречи!</p>
-      <h2>Пусть этот вечер будет наполнен теплом, радостью и хорошими моментами</h2>
-      <p class="placeholder">Вторая часть открытки — дополнительные детали, программа или заключительное пожелание.</p>
-      <footer>С нетерпением ждём вас</footer>
+
+    <section class="invitation" id="invitation">
+      <div class="invitation-orb orb-one"></div>
+      <div class="invitation-orb orb-two"></div>
+      <div class="invitation-inner reveal">
+        <div class="section-mark"><span></span> ВРЕМЯ ВСТРЕЧАТЬСЯ <span></span></div>
+        <div class="sparkle">✦</div>
+        <p class="greeting">Дорогие коллеги!</p>
+        <h2>Проведём этот<br>вечер <em>вместе</em></h2>
+        <p class="invite-text">Приглашаем вас оставить рабочие заботы позади, окунуться в атмосферу праздника и вместе встретить Новый год!</p>
+
+        <div class="event-card">
+          <div class="event-item">
+            <div class="event-icon">✧</div>
+            <div><span class="event-label">ДАТА</span><strong>22 декабря</strong><small>вторник · 2026 год</small></div>
+          </div>
+          <div class="event-divider"></div>
+          <div class="event-item">
+            <div class="event-icon">◷</div>
+            <div><span class="event-label">НАЧАЛО</span><strong>17:00</strong><small>Будем ждать вас</small></div>
+          </div>
+          <div class="event-divider"></div>
+          <div class="event-item">
+            <div class="event-icon">⌖</div>
+            <div><span class="event-label">МЕСТО ВСТРЕЧИ</span><strong>Korston</strong><small>г. Казань</small></div>
+          </div>
+        </div>
+
+        <p class="closing">Пусть этот вечер будет наполнен<br><span>радостью, улыбками и яркими моментами!</span></p>
+        <div class="signature"><span class="signature-line"></span><span>До встречи!</span><span class="signature-line"></span></div>
+        <a class="back-top" href="#top">↑ <span>НАВЕРХ</span></a>
+      </div>
+      <div class="footer-note">АО «СЕТЕВАЯ КОМПАНИЯ» <span>·</span> НОВОГОДНИЙ КОРПОРАТИВ 2026</div>
     </section>
   </main>
   <script src="script.js"></script>
