@@ -1,73 +1,26 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#06152d">
-  <meta name="description" content="Приглашение на новогодний корпоратив АО «Сетевая компания»">
-  <title>Новогодний корпоратив — АО «Сетевая компания»</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <canvas id="lightning" aria-hidden="true"></canvas>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="snow" id="snow" aria-hidden="true"></div>
-
-  <main>
-    <section class="hero" id="top">
-      <div class="hero-glow"></div>
-      <div class="hero-content">
-        <div class="eyebrow"><span class="eyebrow-line"></span> АО «Сетевая компания» <span class="eyebrow-line"></span></div>
-        <img class="company-logo" src="logo-setevaya.png" alt="Сетевая компания">
-        <p class="hero-kicker">ПРИГЛАШАЕТ НА</p>
-        <h1>НОВОГОДНИЙ<br><span>КОРПОРАТИВ</span></h1>
-        <div class="hero-year">2026 <i></i> 2027</div>
-        <a class="scroll-link" href="#invitation" aria-label="Прокрутить к приглашению">
-          <span>ОТКРОЙТЕ ПРИГЛАШЕНИЕ</span>
-          <span class="scroll-circle"><span>↓</span></span>
-        </a>
-      </div>
-      <div class="side-label">ВМЕСТЕ СОЗДАЁМ ЭНЕРГИЮ БУДУЩЕГО</div>
-      <div class="hero-bottom"><span>22 ДЕКАБРЯ 2026</span><span class="bottom-dash"></span><span>КАЗАНЬ</span></div>
-    </section>
-
-    <section class="invitation" id="invitation">
-      <div class="invitation-orb orb-one"></div>
-      <div class="invitation-orb orb-two"></div>
-      <div class="invitation-inner reveal">
-        <div class="section-mark"><span></span> ВРЕМЯ ВСТРЕЧАТЬСЯ <span></span></div>
-        <div class="sparkle">✦</div>
-        <p class="greeting">Дорогие коллеги!</p>
-        <h2>Проведём этот<br>вечер <em>вместе</em></h2>
-        <p class="invite-text">Приглашаем вас оставить рабочие заботы позади, окунуться в атмосферу праздника и вместе встретить Новый год!</p>
-
-        <div class="event-card">
-          <div class="event-item">
-            <div class="event-icon">✧</div>
-            <div><span class="event-label">ДАТА</span><strong>22 декабря</strong><small>вторник · 2026 год</small></div>
-          </div>
-          <div class="event-divider"></div>
-          <div class="event-item">
-            <div class="event-icon">◷</div>
-            <div><span class="event-label">НАЧАЛО</span><strong>17:00</strong><small>Будем ждать вас</small></div>
-          </div>
-          <div class="event-divider"></div>
-          <div class="event-item">
-            <div class="event-icon">⌖</div>
-            <div><span class="event-label">МЕСТО ВСТРЕЧИ</span><strong>Korston</strong><small>г. Казань</small></div>
-          </div>
-        </div>
-
-        <p class="closing">Пусть этот вечер будет наполнен<br><span>радостью, улыбками и яркими моментами!</span></p>
-        <div class="signature"><span class="signature-line"></span><span>До встречи!</span><span class="signature-line"></span></div>
-        <a class="back-top" href="#top">↑ <span>НАВЕРХ</span></a>
-      </div>
-      <div class="footer-note">АО «СЕТЕВАЯ КОМПАНИЯ» <span>·</span> НОВОГОДНИЙ КОРПОРАТИВ 2026</div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061528"><meta name="description" content="Приглашение на праздничный вечер АО «Сетевая компания»">
+<meta property="og:title" content="Энергия праздника — АО «Сетевая компания»"><meta property="og:description" content="22 декабря · 17:00 · Korston, Казань">
+<title>Энергия праздника — АО «Сетевая компания»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress"></div>
+<section class="hero" id="top"><div class="stars"></div><div class="horizon"></div><div class="energy energy-a"></div><div class="energy energy-b"></div>
+<svg class="bolt bolt-one" viewBox="0 0 420 620" aria-hidden="true"><path d="M270 0 155 190 245 205 90 430 205 300 145 280Z"/></svg>
+<svg class="bolt bolt-two" viewBox="0 0 420 620" aria-hidden="true"><path d="M270 0 155 190 245 205 90 430 205 300 145 280Z"/></svg>
+<div class="hero-content"><div class="topline"><span></span> АО «СЕТЕВАЯ КОМПАНИЯ» <span></span></div>
+<div class="logo-wrap"><div class="logo-aura"></div><img class="logo" src="logo.png" alt="Логотип АО «Сетевая компания»"></div>
+<p class="hero-kicker">ЭНЕРГИЯ ОБЪЕДИНЯЕТ</p><h1>Время встретиться<br><em>вне графика</em></h1>
+<p class="hero-note">Праздничный вечер нашей большой команды</p><button class="open-btn" id="openInvite"><span>Открыть приглашение</span><b>↓</b></button></div>
+<div class="bottom-mark"><span>22</span><i></i><span>12</span><i></i><span>2026</span></div><div class="scroll-cue">ПРОКРУТИТЕ ВНИЗ <span>⌄</span></div></section>
+<main><section class="invitation" id="invitation"><div class="section-glow"></div><div class="light-streak streak-one"></div><div class="light-streak streak-two"></div>
+<div class="invite-inner reveal"><div class="small-label"><span>✦</span> ПРИГЛАШЕНИЕ <span>✦</span></div>
+<h2>Дорогие<br><em>коллеги!</em></h2>
+<p class="invite-copy">Каждый день мы объединяем энергию, профессионализм и усилия ради общего дела. А теперь предлагаем объединиться, чтобы просто хорошо провести время вместе!</p>
+<p class="invite-copy second-copy">Приглашаем вас на праздничный корпоративный вечер АО «Сетевая компания».</p>
+<div class="event-card"><div class="event-date"><span>ДЕКАБРЯ</span><strong>22</strong><span>ВТОРНИК</span></div><div class="event-divider"></div>
+<div class="event-info"><div><span class="event-icon">◷</span><div><small>НАЧАЛО ВЕЧЕРА</small><strong>17:00</strong></div></div>
+<div><span class="event-icon">⌖</span><div><small>МЕСТО ВСТРЕЧИ</small><strong>Korston</strong><small class="city">Казань</small></div></div></div></div>
+<div class="closing"><span class="closing-line"></span><p>Будем рады видеть каждого!</p><span class="closing-line"></span></div><a class="back-top" href="#top">↑ &nbsp; В НАЧАЛО</a></div>
+<footer><span>АО «СЕТЕВАЯ КОМПАНИЯ»</span><span>ЭНЕРГИЯ ОБЪЕДИНЯЕТ</span></footer></section></main><script src="script.js"></script></body></html>
