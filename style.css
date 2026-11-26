@@ -1,48 +1,1007 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#061528;color:#eef7ff;font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
 
-.hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#123b61 0,#0a2440 38%,#061528 76%)}
-.hero:before{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(115deg,transparent 0 100px,#70caff08 102px,#70caff08 104px,transparent 108px);animation:drift 18s linear infinite}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#06152844,transparent 45%,#061528)}
-.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff9 99%,transparent),radial-gradient(2px 2px at 70% 20%,#bceaff99 99%,transparent),radial-gradient(1px 1px at 82% 72%,#fff9 99%,transparent);background-size:230px 210px;animation:twinkle 5s ease-in-out infinite alternate}
-.horizon{position:absolute;width:90vw;height:35vw;bottom:-27vw;border-radius:50%;border:1px solid #61caff30;box-shadow:0 0 80px #138edb22}
-.hero-content{position:relative;z-index:3;width:min(900px,92vw);text-align:center;padding:65px 0 90px;animation:rise 1.4s both}
-.topline,.small-label{font-size:10px;letter-spacing:.32em;color:#a8dafa;font-weight:600;display:flex;align-items:center;justify-content:center;gap:15px}.topline span{width:34px;height:1px;background:#58b9ed88}
-.logo-wrap{position:relative;width:min(680px,88vw);padding:0 12px;margin:38px auto 28px;overflow:visible}.logo{display:block;position:relative;z-index:2;width:100%;max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 0 18px #169eea55);animation:logoIn 1.8s .2s both}
-.logo-aura{position:absolute;inset:15% 5%;border-radius:50%;background:#148cda55;filter:blur(55px);animation:aura 3s ease-in-out infinite alternate}
-.hero-kicker{font-size:10px;letter-spacing:.42em;color:#8fd7ff;margin:25px 0 14px}.hero h1{font:400 clamp(43px,7vw,78px)/1.04 'Playfair Display',serif;margin:0;text-shadow:0 6px 40px #0008}.hero h1 em,.invite-inner h2 em{font-weight:400;color:#8bd5ff}
-.hero-note{color:#c4d9e9;font-size:14px;letter-spacing:.06em;margin:22px 0 30px}.open-btn{border:1px solid #8bd5ff88;background:#ffffff0b;color:#eff9ff;border-radius:40px;padding:15px 23px 15px 27px;display:inline-flex;align-items:center;gap:24px;letter-spacing:.13em;text-transform:uppercase;font:600 10px Manrope;cursor:pointer;transition:.3s;backdrop-filter:blur(8px)}
-.open-btn:hover{background:#a9e3ff;color:#061528;box-shadow:0 0 35px #48bfff66;transform:translateY(-3px)}.open-btn b{font-size:18px;font-weight:400}
-.bottom-mark{position:absolute;z-index:4;bottom:37px;left:50%;transform:translateX(-50%);display:flex;gap:15px;align-items:center;color:#8ebbd8;font-size:10px;letter-spacing:.18em}.bottom-mark i{width:3px;height:3px;background:#65caff;border-radius:50%}
-.scroll-cue{position:absolute;z-index:4;bottom:36px;right:5%;font-size:8px;letter-spacing:.22em;color:#7096b3;display:flex;gap:12px;align-items:center}.scroll-cue span{font-size:18px;animation:down 1.5s infinite}
-.bolt{position:absolute;z-index:2;width:min(26vw,360px);height:60vh;fill:none;stroke:#8be4ff;stroke-width:3;stroke-linejoin:bevel;filter:drop-shadow(0 0 7px #43caff) drop-shadow(0 0 20px #149eff);opacity:0;animation:lightning 6s infinite}
-.bolt-one{left:3%;top:10%;transform:rotate(-8deg)}.bolt-two{right:1%;top:18%;transform:scaleX(-1) rotate(-12deg);animation-delay:2.7s;stroke:#d6f5ff}
-.energy{position:absolute;z-index:1;width:70vw;height:1px;background:linear-gradient(90deg,transparent,#50c8ff,transparent);box-shadow:0 0 20px #39baff;opacity:0;transform:rotate(-24deg)}
-.energy-a{top:29%;left:-20%;animation:beam 7s 1s infinite}.energy-b{top:68%;right:-20%;animation:beam 8s 3.2s infinite reverse}
-.invitation{position:relative;min-height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 25%,#12395a,#081c31 58%,#061528);padding:105px 22px 35px}
-.section-glow{position:absolute;width:70vw;height:70vw;left:15%;top:-35vw;border-radius:50%;background:#1476ad20;filter:blur(80px)}
+/* =========================================
+   ОСНОВА
+========================================= */
 
-.invite-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}.small-label{font-size:9px;letter-spacing:.3em}
-.invite-inner h2{font:400 clamp(48px,8vw,82px)/.98 'Playfair Display',serif;margin:28px 0 25px}.invite-copy{max-width:620px;margin:0 auto 13px;color:#c5d9e9;font-size:15px;line-height:1.9}.second-copy{color:#91b7d2}
-.event-card{margin:45px auto 35px;max-width:620px;display:flex;align-items:center;justify-content:center;gap:42px;padding:28px 35px;border:1px solid #8acfff4a;border-radius:18px;background:linear-gradient(135deg,#ffffff0c,#ffffff03);box-shadow:0 20px 70px #0003,inset 0 1px #ffffff12;backdrop-filter:blur(10px)}
-.event-date{display:flex;flex-direction:column;gap:5px;color:#a8dafa;font-size:9px;letter-spacing:.2em}.event-date strong{font:400 76px/.95 'Playfair Display',serif;color:#fff;text-shadow:0 0 28px #5bbcff55}
-.event-divider{height:110px;width:1px;background:linear-gradient(transparent,#7bcfff88,transparent)}.event-info{display:flex;flex-direction:column;gap:20px;text-align:left}.event-info>div{display:flex;align-items:center;gap:14px}.event-icon{font-size:25px;color:#8ed8ff;width:28px;text-align:center}
-.event-info small{display:block;color:#8db6d2;font-size:8px;letter-spacing:.2em;margin-bottom:4px}.event-info strong{font:500 22px 'Playfair Display',serif;color:#fff}.event-info .city{display:inline-block;margin-left:9px;letter-spacing:.08em}
-.closing{display:flex;align-items:center;justify-content:center;gap:18px;color:#b9d8ec;font:italic 20px 'Playfair Display',serif}.closing-line{width:40px;height:1px;background:#69caff66}
-.back-top{display:inline-block;margin-top:45px;text-decoration:none;color:#80b8d9;font-size:9px;letter-spacing:.22em;transition:.2s}.back-top:hover{color:white}
-footer{position:relative;z-index:2;max-width:1100px;margin:90px auto 0;padding-top:20px;border-top:1px solid #8acfff22;display:flex;justify-content:space-between;color:#6589a5;font-size:8px;letter-spacing:.2em}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}.reveal.visible{opacity:1;transform:none}
-@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}@keyframes logoIn{from{opacity:0;transform:scale(.88);filter:blur(8px)}to{opacity:1;transform:scale(1);filter:drop-shadow(0 0 18px #169eea55)}}
-@keyframes aura{to{opacity:.5;transform:scale(1.15)}}8.5%,9.5%{opacity:.9}9%{opacity:.15}9.2%{opacity:1}}
-80%{opacity:.65}90%{opacity:.1;transform:translateX(120%) rotate(-24deg)}}
-@keyframes drift{to{transform:translateX(15%)}}@keyframes twinkle{to{opacity:.45}}@keyframes down{50%{transform:translateY(5px)}}
-@media(max-width:650px){.hero-content{padding:55px 0 85px}.topline{font-size:8px;letter-spacing:.2em}.logo-wrap{margin:35px auto 22px;width:94vw;padding:0 8px}.hero h1{font-size:clamp(42px,11vw,62px)}.hero-note{font-size:12px;line-height:1.7}.scroll-cue{display:none}.invitation{padding:85px 20px 28px}.event-card{gap:22px;padding:24px 18px}.event-date strong{font-size:65px}.event-info strong{font-size:19px}.event-info{gap:17px}.closing{font-size:17px}footer{margin-top:65px;gap:15px;font-size:7px;letter-spacing:.12em}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+* {
+  box-sizing: border-box;
+}
 
-.snow-layer{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
-.snowflake{position:absolute;top:-12px;left:var(--left);width:var(--size);height:var(--size);border-radius:50%;background:#e8f7ff;opacity:var(--opacity);filter:drop-shadow(0 0 5px #bdeaff);animation:snowfall var(--duration) linear var(--delay) infinite}
-@keyframes snowfall{0%{transform:translate3d(0,-5vh,0) scale(.8)}50%{transform:translate3d(var(--sway),50vh,0) scale(1)}100%{transform:translate3d(calc(var(--sway) * -0.5),110vh,0) scale(.7)}}
-.venue-photo{position:relative;max-width:680px;margin:0 auto 38px;border:1px solid #8acfff55;border-radius:18px;overflow:hidden;box-shadow:0 22px 65px #0006}
-.venue-photo img{display:block;width:100%;height:clamp(190px,35vw,340px);object-fit:cover;object-position:center 48%}
-.venue-caption{position:absolute;inset:auto 0 0;padding:35px 22px 18px;background:linear-gradient(transparent,#061528e8);display:flex;flex-direction:column;gap:5px;text-align:left}
-.venue-caption span{font-size:8px;letter-spacing:.25em;color:#a8dafa}.venue-caption strong{font:500 21px 'Playfair Display',serif;color:#fff;letter-spacing:.08em}
-@media(max-width:650px){.venue-photo{margin:0 auto 30px}.venue-photo img{height:220px}.venue-caption strong{font-size:18px}}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #061528;
+  color: #eef7ff;
+  font-family: 'Manrope', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   ПЕРВЫЙ ЭКРАН
+========================================= */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      #123b61 0,
+      #0a2440 38%,
+      #061528 76%
+    );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+
+  background: repeating-linear-gradient(
+    115deg,
+    transparent 0 100px,
+    #70caff08 102px,
+    #70caff08 104px,
+    transparent 108px
+  );
+
+  animation: drift 18s linear infinite;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    #06152844,
+    transparent 45%,
+    #061528
+  );
+
+  pointer-events: none;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, #fff9 99%, transparent),
+    radial-gradient(2px 2px at 70% 20%, #bceaff99 99%, transparent),
+    radial-gradient(1px 1px at 82% 72%, #fff9 99%, transparent);
+
+  background-size: 230px 210px;
+
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.horizon {
+  position: absolute;
+  width: 90vw;
+  height: 35vw;
+  bottom: -27vw;
+
+  border-radius: 50%;
+  border: 1px solid #61caff30;
+
+  box-shadow: 0 0 80px #138edb22;
+}
+
+
+/* =========================================
+   МОЛНИИ
+========================================= */
+
+.bolt {
+  position: absolute;
+  z-index: 2;
+
+  width: min(26vw, 360px);
+  height: 60vh;
+
+  fill: none;
+  stroke: #8be4ff;
+  stroke-width: 3;
+  stroke-linejoin: bevel;
+  stroke-linecap: round;
+
+  filter:
+    drop-shadow(0 0 7px #43caff)
+    drop-shadow(0 0 20px #149eff);
+
+  opacity: 0;
+
+  animation: lightning 6s infinite;
+
+  pointer-events: none;
+}
+
+.bolt-one {
+  left: 3%;
+  top: 10%;
+
+  transform: rotate(-8deg);
+}
+
+.bolt-two {
+  right: 1%;
+  top: 18%;
+
+  transform: scaleX(-1) rotate(-12deg);
+
+  animation-delay: 2.7s;
+  stroke: #d6f5ff;
+}
+
+
+/* =========================================
+   ЭНЕРГЕТИЧЕСКИЕ ВСПЫШКИ
+========================================= */
+
+.energy {
+  position: absolute;
+  z-index: 1;
+
+  width: 70vw;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #50c8ff,
+    transparent
+  );
+
+  box-shadow: 0 0 20px #39baff;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.energy-a {
+  top: 29%;
+  left: -20%;
+
+  animation: beam 7s 1s infinite;
+}
+
+.energy-b {
+  top: 68%;
+  right: -20%;
+
+  animation: beam 8s 3.2s infinite reverse;
+}
+
+
+/* =========================================
+   СОДЕРЖИМОЕ ПЕРВОГО ЭКРАНА
+========================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  width: min(900px, 92vw);
+
+  text-align: center;
+
+  padding: 65px 0 90px;
+
+  animation: rise 1.4s both;
+}
+
+.topline,
+.small-label {
+  font-size: 10px;
+  letter-spacing: .32em;
+
+  color: #a8dafa;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.topline span {
+  width: 34px;
+  height: 1px;
+  background: #58b9ed88;
+}
+
+
+/* =========================================
+   ЛОГОТИП
+========================================= */
+
+.logo-wrap {
+  position: relative;
+
+  width: min(680px, 88vw);
+
+  padding: 0 12px;
+  margin: 38px auto 28px;
+
+  overflow: visible;
+}
+
+.logo {
+  display: block;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 18px #169eea55);
+
+  animation: logoIn 1.8s .2s both;
+}
+
+.logo-aura {
+  position: absolute;
+  inset: 15% 5%;
+
+  border-radius: 50%;
+
+  background: #148cda55;
+  filter: blur(55px);
+
+  animation: aura 3s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   ЗАГОЛОВКИ И ТЕКСТ
+========================================= */
+
+.hero-kicker {
+  font-size: 10px;
+  letter-spacing: .42em;
+  color: #8fd7ff;
+
+  margin: 25px 0 14px;
+}
+
+.hero h1 {
+  font: 400 clamp(43px, 7vw, 78px)/1.04 'Playfair Display', serif;
+
+  margin: 0;
+
+  text-shadow: 0 6px 40px #0008;
+}
+
+.hero h1 em,
+.invite-inner h2 em {
+  font-weight: 400;
+  color: #8bd5ff;
+}
+
+.hero-note {
+  color: #c4d9e9;
+
+  font-size: 14px;
+  letter-spacing: .06em;
+
+  margin: 22px 0 30px;
+}
+
+
+/* =========================================
+   КНОПКА
+========================================= */
+
+.open-btn {
+  border: 1px solid #8bd5ff88;
+
+  background: #ffffff0b;
+  color: #eff9ff;
+
+  border-radius: 40px;
+
+  padding: 15px 23px 15px 27px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+
+  letter-spacing: .13em;
+  text-transform: uppercase;
+
+  font: 600 10px 'Manrope', sans-serif;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  backdrop-filter: blur(8px);
+}
+
+.open-btn:hover {
+  background: #a9e3ff;
+  color: #061528;
+
+  box-shadow: 0 0 35px #48bfff66;
+
+  transform: translateY(-3px);
+}
+
+.open-btn b {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* =========================================
+   НИЖНИЕ ЭЛЕМЕНТЫ ПЕРВОГО ЭКРАНА
+========================================= */
+
+.bottom-mark {
+  position: absolute;
+  z-index: 4;
+
+  bottom: 37px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  color: #8ebbd8;
+
+  font-size: 10px;
+  letter-spacing: .18em;
+}
+
+.bottom-mark i {
+  width: 3px;
+  height: 3px;
+
+  background: #65caff;
+  border-radius: 50%;
+}
+
+.scroll-cue {
+  position: absolute;
+  z-index: 4;
+
+  bottom: 36px;
+  right: 5%;
+
+  font-size: 8px;
+  letter-spacing: .22em;
+
+  color: #7096b3;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.scroll-cue span {
+  font-size: 18px;
+  animation: down 1.5s infinite;
+}
+
+
+/* =========================================
+   ВТОРОЙ ЭКРАН
+========================================= */
+
+.invitation {
+  position: relative;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      #12395a,
+      #081c31 58%,
+      #061528
+    );
+
+  padding: 105px 22px 35px;
+}
+
+.section-glow {
+  position: absolute;
+
+  width: 70vw;
+  height: 70vw;
+
+  left: 15%;
+  top: -35vw;
+
+  border-radius: 50%;
+
+  background: #1476ad20;
+
+  filter: blur(80px);
+}
+
+
+/* =========================================
+   ПРИГЛАШЕНИЕ
+========================================= */
+
+.invite-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.small-label {
+  font-size: 9px;
+  letter-spacing: .3em;
+}
+
+.invite-inner h2 {
+  font: 400 clamp(48px, 8vw, 82px)/.98 'Playfair Display', serif;
+
+  margin: 28px 0 25px;
+}
+
+.invite-copy {
+  max-width: 620px;
+
+  margin: 0 auto 13px;
+
+  color: #c5d9e9;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.second-copy {
+  color: #91b7d2;
+}
+
+
+/* =========================================
+   КАРТОЧКА СОБЫТИЯ
+========================================= */
+
+.event-card {
+  margin: 45px auto 35px;
+
+  max-width: 620px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 42px;
+
+  padding: 28px 35px;
+
+  border: 1px solid #8acfff4a;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff0c,
+    #ffffff03
+  );
+
+  box-shadow:
+    0 20px 70px #0003,
+    inset 0 1px #ffffff12;
+
+  backdrop-filter: blur(10px);
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: #a8dafa;
+
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+.event-date strong {
+  font: 400 76px/.95 'Playfair Display', serif;
+
+  color: #fff;
+
+  text-shadow: 0 0 28px #5bbcff55;
+}
+
+.event-divider {
+  height: 110px;
+  width: 1px;
+
+  background: linear-gradient(
+    transparent,
+    #7bcfff88,
+    transparent
+  );
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  text-align: left;
+}
+
+.event-info > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.event-icon {
+  font-size: 25px;
+  color: #8ed8ff;
+
+  width: 28px;
+  text-align: center;
+}
+
+.event-info small {
+  display: block;
+
+  color: #8db6d2;
+
+  font-size: 8px;
+  letter-spacing: .2em;
+
+  margin-bottom: 4px;
+}
+
+.event-info strong {
+  font: 500 22px 'Playfair Display', serif;
+  color: #fff;
+}
+
+.event-info .city {
+  display: inline-block;
+  margin-left: 9px;
+  letter-spacing: .08em;
+}
+
+
+/* =========================================
+   ФОТО KORSTON
+========================================= */
+
+.venue-photo {
+  position: relative;
+
+  max-width: 680px;
+
+  margin: 0 auto 38px;
+
+  border: 1px solid #8acfff55;
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 22px 65px #0006;
+}
+
+.venue-photo img {
+  display: block;
+
+  width: 100%;
+  height: clamp(190px, 35vw, 340px);
+
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.venue-caption {
+  position: absolute;
+  inset: auto 0 0;
+
+  padding: 35px 22px 18px;
+
+  background: linear-gradient(
+    transparent,
+    #061528e8
+  );
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  text-align: left;
+}
+
+.venue-caption span {
+  font-size: 8px;
+  letter-spacing: .25em;
+  color: #a8dafa;
+}
+
+.venue-caption strong {
+  font: 500 21px 'Playfair Display', serif;
+  color: #fff;
+  letter-spacing: .08em;
+}
+
+
+/* =========================================
+   ЗАВЕРШЕНИЕ
+========================================= */
+
+.closing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  color: #b9d8ec;
+
+  font: italic 20px 'Playfair Display', serif;
+}
+
+.closing-line {
+  width: 40px;
+  height: 1px;
+
+  background: #69caff66;
+}
+
+.back-top {
+  display: inline-block;
+
+  margin-top: 45px;
+
+  text-decoration: none;
+
+  color: #80b8d9;
+
+  font-size: 9px;
+  letter-spacing: .22em;
+
+  transition: .2s;
+}
+
+.back-top:hover {
+  color: white;
+}
+
+
+/* =========================================
+   ПОДВАЛ
+========================================= */
+
+footer {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1100px;
+
+  margin: 90px auto 0;
+  padding-top: 20px;
+
+  border-top: 1px solid #8acfff22;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #6589a5;
+
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+
+
+/* =========================================
+   ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ
+========================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* =========================================
+   АНИМАЦИИ
+========================================= */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes logoIn {
+  from {
+    opacity: 0;
+    transform: scale(.88);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 18px #169eea55);
+  }
+}
+
+@keyframes aura {
+  from {
+    opacity: .8;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: .5;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes lightning {
+  0%, 7%, 10%, 100% {
+    opacity: 0;
+  }
+
+  8.5%, 9.5% {
+    opacity: .9;
+  }
+
+  9% {
+    opacity: .15;
+  }
+
+  9.2% {
+    opacity: 1;
+  }
+}
+
+@keyframes beam {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(0) rotate(-24deg);
+  }
+
+  15% {
+    opacity: .8;
+  }
+
+  80% {
+    opacity: .65;
+  }
+
+  90% {
+    opacity: .1;
+    transform: translateX(120%) rotate(-24deg);
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(15%);
+  }
+}
+
+@keyframes twinkle {
+  to {
+    opacity: .45;
+  }
+}
+
+@keyframes down {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+/* =========================================
+   СНЕГОПАД
+========================================= */
+
+.snow-layer {
+  position: fixed;
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+
+  top: -12px;
+  left: var(--left);
+
+  width: var(--size);
+  height: var(--size);
+
+  border-radius: 50%;
+
+  background: #e8f7ff;
+
+  opacity: var(--opacity);
+
+  filter: drop-shadow(0 0 5px #bdeaff);
+
+  animation:
+    snowfall var(--duration) linear var(--delay) infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -5vh, 0) scale(.8);
+  }
+
+  50% {
+    transform: translate3d(var(--sway), 50vh, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(
+      calc(var(--sway) * -0.5),
+      110vh,
+      0
+    ) scale(.7);
+  }
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+@media (max-width: 650px) {
+
+  .hero-content {
+    padding: 55px 0 85px;
+  }
+
+  .topline {
+    font-size: 8px;
+    letter-spacing: .2em;
+  }
+
+  .logo-wrap {
+    margin: 35px auto 22px;
+
+    width: 94vw;
+    padding: 0 8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 11vw, 62px);
+  }
+
+  .hero-note {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .bolt {
+    width: 32vw;
+    height: 48vh;
+    stroke-width: 2;
+  }
+
+  .bolt-one {
+    left: -5%;
+  }
+
+  .bolt-two {
+    right: -5%;
+  }
+
+  .invitation {
+    padding: 85px 20px 28px;
+  }
+
+  .event-card {
+    gap: 22px;
+    padding: 24px 18px;
+  }
+
+  .event-date strong {
+    font-size: 65px;
+  }
+
+  .event-info strong {
+    font-size: 19px;
+  }
+
+  .event-info {
+    gap: 17px;
+  }
+
+  .closing {
+    font-size: 17px;
+  }
+
+  footer {
+    margin-top: 65px;
+    gap: 15px;
+    font-size: 7px;
+    letter-spacing: .12em;
+  }
+
+  .venue-photo {
+    margin: 0 auto 30px;
+  }
+
+  .venue-photo img {
+    height: 220px;
+  }
+
+  .venue-caption strong {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================
+   ОТКЛЮЧЕНИЕ АНИМАЦИЙ ПРИ НЕОБХОДИМОСТИ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+}
